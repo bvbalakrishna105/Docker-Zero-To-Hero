@@ -1,0 +1,68 @@
+1. Get the docker version
+
+docker --version
+
+2. Pull the required image
+
+docker pull <image name>
+
+3. List of running containners
+
+docker ps
+
+4. List of all the running and exited containers
+
+docker ps -a
+
+5. Create a containe from an image
+
+docker run -it -d <image name>
+
+
+6. Access the running container
+
+docker exec -it <container id> bash
+
+7. Stop the running container
+
+docker stop <container id>
+
+8. Kill the container by stoping its execution immediatel
+
+docker kill <container id>
+
+
+9. Creates a new image of an edited container on the local system
+
+docker commit <container id> <username/imagename>
+
+
+10. Push an image to the docker hub repository
+
+docker push <username/imagename>
+
+11. Login to the docker hub repositor
+
+docker login
+
+
+12. List of all the locall stored docker images
+
+docker images
+
+13. Remove or Delete a stopped container 
+
+docker rm <container id>
+
+
+14. Delete an image from local storage
+
+docker rmi <image-id>
+
+15. Build an image from a specified docker file
+
+docker build <path to docker file>
+
+
+
+
