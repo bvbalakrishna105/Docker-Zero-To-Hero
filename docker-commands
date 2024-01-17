@@ -2,6 +2,11 @@
 
 docker --version
 
+vidkrix@venky-worker:~$ docker --version
+Docker version 24.0.7, build afdd53b
+vidkrix@venky-worker:~$
+
+
 2. Pull the required image
 
 docker pull <image name>
@@ -10,9 +15,37 @@ docker pull <image name>
 
 docker ps
 
+vidkrix@venky-worker:~$ docker ps
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED      STATUS       PORTS                                                                                                                                  NAMES
+1b2ca1983181   gcr.io/k8s-minikube/kicbase:v0.0.42   "/usr/local/bin/entr…"   4 days ago   Up 4 hours   127.0.0.1:32777->22/tcp, 127.0.0.1:32776->2376/tcp, 127.0.0.1:32775->5000/tcp, 127.0.0.1:32774->8443/tcp, 127.0.0.1:32773->32443/tcp   minikube
+vidkrix@venky-worker:~$
+
+
+
 4. List of all the running and exited containers
 
 docker ps -a
+
+vidkrix@venky-worker:~$ docker ps -a
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED      STATUS                    PORTS                                                                                                                                  NAMES
+1b2ca1983181   gcr.io/k8s-minikube/kicbase:v0.0.42   "/usr/local/bin/entr…"   4 days ago   Up 4 hours                127.0.0.1:32777->22/tcp, 127.0.0.1:32776->2376/tcp, 127.0.0.1:32775->5000/tcp, 127.0.0.1:32774->8443/tcp, 127.0.0.1:32773->32443/tcp   minikube
+71b3c396800e   ubuntu                                "/bin/bash"              5 days ago   Exited (0) 5 days ago                                                                                                                                            kind_hellman
+44d7791fedb3   nginx                                 "/docker-entrypoint.…"   5 days ago   Exited (0) 4 days ago                                                                                                                                            mynginx
+40e8fe61e9cd   alpine                                "echo 'hello world'"     5 days ago   Exited (0) 5 days ago                                                                                                                                            practical_diffie
+d6685cdf0539   ubuntu                                "/bin/sh -c 'while t…"   5 days ago   Exited (137) 4 days ago                                                                                                                                          serene_shockley
+95b89fd99cf3   fedora                                "/bin/bash"              5 days ago   Exited (2) 5 days ago                                                                                                                                            heuristic_wilson
+39768843f339   fedora                                "/bin/echo 'Hello Wo…"   5 days ago   Exited (0) 5 days ago                                                                                                                                            jovial_bartik
+80cd911f5b5a   myfirstimage                          "/bin/bash"              5 days ago   Exited (0) 5 days ago                                                                                                                                            hopeful_margulis
+5842c64754d5   40266aaaa2a7                          "/bin/bash"              5 days ago   Exited (0) 5 days ago                                                                                                                                            festive_euclid
+392f26d5df7a   ubuntu                                "bash"                   5 days ago   Exited (0) 5 days ago                                                                                                                                            peaceful_torvalds
+aab4b03e8911   hello-world                           "/hello"                 5 days ago   Exited (0) 5 days ago                                                                                                                                            amazing_mendel
+6d8a74cae876   docker/whalesay                       "cowsay Hello World"     5 days ago   Exited (0) 5 days ago                                                                                                                                            relaxed_benz
+7ad077a34f77   nginx                                 "/docker-entrypoint.…"   9 days ago   Exited (0) 9 days ago                                                                                                                                            mynginx1
+249144a3cc5c   mysql:latest                          "docker-entrypoint.s…"   9 days ago   Exited (0) 9 days ago                                                                                                                                            mysql-docker-local
+0d05c413ddf2   ubuntu                                "/bin/bash"              9 days ago   Exited (137) 9 days ago                                                                                                                                          infallible_greider
+90dac3b9fe98   hello-world                           "/hello"                 9 days ago   Exited (0) 9 days ago                                                                                                                                            funny_newton
+vidkrix@venky-worker:~$
+
 
 5. Create a containe from an image
 
@@ -49,6 +82,22 @@ docker login
 12. List of all the locall stored docker images
 
 docker images
+
+vidkrix@venky-worker:~$ docker images
+REPOSITORY                    TAG       IMAGE ID       CREATED         SIZE
+myfirstimage                  latest    40266aaaa2a7   5 days ago      77.9MB
+debian                        latest    a6916e41aa87   6 days ago      117MB
+mysql                         latest    73246731c4b0   4 weeks ago     619MB
+ubuntu                        latest    174c8c134b2a   5 weeks ago     77.9MB
+alpine                        latest    f8c20f8bbcb6   5 weeks ago     7.38MB
+fedora                        latest    8404925a71fd   7 weeks ago     177MB
+gcr.io/k8s-minikube/kicbase   v0.0.42   dbc648475405   2 months ago    1.2GB
+nginx                         latest    d453dd892d93   2 months ago    187MB
+gcc                           latest    a916c3fea09a   5 months ago    1.38GB
+hello-world                   latest    d2c94e258dcb   8 months ago    13.3kB
+mysql/mysql-server            latest    1d9c2219ff69   12 months ago   496MB
+docker/whalesay               latest    6b362a9f73eb   8 years ago     247MB
+vidkrix@venky-worker:~$
 
 13. Remove or Delete a stopped container 
 
