@@ -112,6 +112,11 @@ docker rmi <image-id>
 
 docker build <path to docker file>
 
+16. Get the history of docker image
+
+docker history <image-name>
+
+
 
 
 
